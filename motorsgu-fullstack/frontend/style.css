@@ -228,14 +228,14 @@ nav a:hover {
 }
 
 .hero-car {
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-card {
-  width: min(550px, 100%);
+  width: min(500px, 100%);
   height: 455px;
   border-radius: 22px;
   overflow: hidden;
