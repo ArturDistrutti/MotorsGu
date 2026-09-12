@@ -248,6 +248,8 @@ nav a:hover {
   height: 100%;
   display: grid;
   place-items: center;
+  justify-content: center; 
+  align-items: center; 
   color: rgba(255, 255, 255, 0.65);
   font-size: 45px;
   font-weight: 900;
