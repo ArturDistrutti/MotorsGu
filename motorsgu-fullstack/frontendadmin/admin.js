@@ -85,12 +85,20 @@ function render(){
   $("#totalCars").textContent=cars.length;
   $("#usedCars").textContent=cars.filter(c=>c.condition==="Seminovo").length;
   $("#newCars").textContent=cars.filter(c=>c.condition==="Novo").length;
-  $("#adminList").innerHTML=list.length?list.map(c=>`
+  
+  $("#adminList").innerHTML=list.length ? list.map(c=>`
     <div class="vehicle-row">
-      <div class="thumb">${c.image?`<img src="${imageUrl(c.image)}" alt="">`:"CARRO"}</div>
-      <div><h3>${c.model}</h3><p>${c.year} • ${c.color} • ${Number(c.km).toLocaleString("pt-BR")} km • ${c.condition} • ${Number(c.price).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}</p></div>
-      <div class="row-actions"><button onclick="editCar(${c.id})">Editar</button><button class="danger" onclick="deleteCar(${c.id})">🗑 Remover do site</button></div>
-    </div>`).join(""):`<div class="empty-list">Nenhum veículo cadastrado.</div>`;
+      <div class="thumb">${c.image ? `<img src="${imageUrl(c.image)}" alt="">` : "CARRO"}</div>
+      <div>
+        <h3>${c.model}</h3>
+        <p>${c.year} • ${c.color} • ${Number(c.km).toLocaleString("pt-BR")} km • ${c.condition} • ${Number(c.price).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}</p>
+      </div>
+      <div class="row-actions">
+        <button type="button" onclick="editCar('${c.id}')">Editar</button>
+        <button type="button" class="danger" onclick="deleteCar('${c.id}')">🗑 Remover</button>
+      </div>
+    </div>`).join("") : `<div class="empty-list">Nenhum veículo cadastrado.</div>`;
+    
   updateRemoveOptions();
 }
 $("#searchAdmin").addEventListener("input",render);
@@ -169,14 +177,15 @@ $("#carForm").addEventListener("submit", async e=>{
   }
 });
 
-window.editCar=id=>openModal(cars.find(c=>c.id===id));
-window.deleteCar=async id=>{
-  const car=cars.find(c=>c.id===id);
+window.editCar = id => openModal(cars.find(c => String(c.id) === String(id)));
+
+window.deleteCar = async id => {
+  const car = cars.find(c => String(c.id) === String(id));
   if(!car || !confirm(`Excluir ${car.model}?`)) return;
   try{
-    const res=await fetch(`${API_BASE_URL}/vehicles/${id}`,{ method:"DELETE", headers: authHeaders() });
-    if(res.status===401){ handleAuthFailure(); return; }
-    if(!res.ok && res.status!==204){ alert("Não foi possível excluir o veículo."); return; }
+    const res = await fetch(`${API_BASE_URL}/vehicles/${id}`, { method:"DELETE", headers: authHeaders() });
+    if(res.status === 401){ handleAuthFailure(); return; }
+    if(!res.ok && res.status !== 204){ alert("Não foi possível excluir o veículo."); return; }
     await loadCars();
   }catch(err){
     console.error(err);
