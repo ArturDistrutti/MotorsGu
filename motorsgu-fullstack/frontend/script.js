@@ -2,7 +2,7 @@ const BACKEND_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, "");
 
 const SETTINGS = {
   whatsapp: "5511982776920", // Troque pelo WhatsApp da loja.
-  instagram: "https://www.instagram.com/" // Troque pelo Instagram da loja.
+  instagram: "https://www.instagram.com/@motorsgu/" // Troque pelo Instagram da loja.
 };
 
 let cars = [];
