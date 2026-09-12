@@ -237,7 +237,7 @@ nav a:hover {
 .hero-card {
   width: min(540px, 100%);  /* Largura maior para ficar retangular */
   height: 270px;            /* Altura menor proporcional ao retângulo */
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;       /* Corrigido: 'center' não é valor válido para position */
   background: linear-gradient(145deg, #dce5ee, #6f8499);
