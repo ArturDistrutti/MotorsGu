@@ -241,7 +241,7 @@ nav a:hover {
   overflow: hidden;
   position: relative;       /* Corrigido: 'center' não é valor válido para position */
   background: linear-gradient(145deg, #dce5ee, #6f8499);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
 }
 
 .hero-car-image {
