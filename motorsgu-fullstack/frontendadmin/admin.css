@@ -365,6 +365,7 @@ body {
 .row-actions {
   display: flex;
   gap: 7px;
+  align-items: center;
 }
 
 .row-actions button {
@@ -379,6 +380,7 @@ body {
 .row-actions .danger {
   color: #c73535;
   border-color: #e8caca;
+  background: #fff;
 }
 
 .row-actions .danger:hover {
