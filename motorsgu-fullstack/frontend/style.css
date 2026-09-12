@@ -235,8 +235,8 @@ nav a:hover {
 }
 
 .hero-card {
-  width: min(580px, 100%);  /* Largura maior para ficar retangular */
-  height: 320px;            /* Altura menor proporcional ao retângulo */
+  width: min(540px, 100%);  /* Largura maior para ficar retangular */
+  height: 310px;            /* Altura menor proporcional ao retângulo */
   border-radius: 22px;
   overflow: hidden;
   position: relative;       /* Corrigido: 'center' não é valor válido para position */
@@ -256,7 +256,8 @@ nav a:hover {
 .hero-car-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;      /* Exibe a imagem inteira sem cortar nada */
+  object-fit: cover;       /* Exibe a imagem inteira sem cortar nada */
+  object-position: center;     
   padding: 10px;            /* Evita que toque nas bordas do card */
 }
 
