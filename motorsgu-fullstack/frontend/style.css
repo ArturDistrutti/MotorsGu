@@ -245,11 +245,11 @@ nav a:hover {
 }
 
 .hero-car-image {
-  height: 100%;
+  height: 90%;
   display: grid;
-  place-items: center;
+  place-items: flex;
   justify-content: center; 
-  align-items: center; 
+  align-items: flex; 
   color: rgba(255, 255, 255, 0.65);
   font-size: 45px;
   font-weight: 455;
