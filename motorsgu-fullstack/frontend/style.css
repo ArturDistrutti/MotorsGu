@@ -258,7 +258,6 @@ nav a:hover {
   height: 100%;
   object-fit: cover;       /* Exibe a imagem inteira sem cortar nada */
   object-position: center;     
-  padding: 10px;            /* Evita que toque nas bordas do card */
 }
 
 .hero-card-bottom {
