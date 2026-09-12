@@ -239,7 +239,7 @@ nav a:hover {
   height: 455px;
   border-radius: 22px;
   overflow: hidden;
-  position: relative;
+  position: center;
   background: linear-gradient(145deg, #dce5ee, #6f8499);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
